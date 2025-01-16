@@ -1,9 +1,14 @@
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
+import { withAdminAuth } from './adminMiddleware';
 import auth from './auth';
 
 export async function middleware(request: NextRequest) {
+  // Si c'est une route admin, vérifier les droits admin
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    return withAdminAuth(request);
+  }
   // Créer une copie modifiable de la requête
   const response = NextResponse.next();
 
@@ -51,5 +56,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/'], // Ajustez selon vos besoins
+  matcher: ['/', '/admin/:path*', '/profils', '/clients', '/admin', '/addClient'], // Ajustez selon vos besoins
 };

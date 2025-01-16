@@ -1,5 +1,5 @@
 export type Client = {
-  firstname: string;
+  firstName: string;
   lastName: string;
   company: string;
   email: string;
@@ -10,4 +10,8 @@ export type Client = {
   $permissions: string[];
   $databaseId: string;
   $collectionId: string;
+};
+
+export type ClientCardProps = {
+  client: Client;
 };

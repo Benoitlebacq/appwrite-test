@@ -1,9 +1,10 @@
-const Admin = () => {
+import auth from '@/auth';
+
+export default async function Admin() {
   return (
     <div>
-      <>Admin</>
+      <h1>Page Admin</h1>
+      {/* Contenu admin */}
     </div>
   );
-};
-
-export default Admin;
+}

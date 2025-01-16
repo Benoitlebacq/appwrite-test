@@ -18,7 +18,6 @@ const auth: Auth = {
       auth.user = null;
       auth.sessionCookie = null;
     }
-    console.log('auth.user :::::', auth.user);
     return auth.user;
   },
 

@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <div>
-      <>BIDULE</>
+      <>Vous n'avez pas les droits pour accèder a cette section</>
     </div>
   );
 };

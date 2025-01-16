@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Sidebar() {
+export default function Sidebar({ isUnauthorized = false }: { isUnauthorized?: boolean }) {
   const pathname = usePathname();
 
   const navItems = [
@@ -21,7 +21,7 @@ export default function Sidebar() {
               href={item.href}
               className={`block p-2 rounded transition-colors ${
                 pathname === item.href ? 'bg-upman text-white' : 'hover:bg-gray-200'
-              }`}
+              } ${isUnauthorized && item.href === '/admin' ? 'bg-upman text-white' : ''}`}
             >
               {item.label}
             </Link>

@@ -46,8 +46,6 @@ const axiosInstance = async ({
       config.data = data;
     }
 
-    console.log('Axios Request Config:', JSON.stringify(config, null, 2));
-
     const response = await axios(config);
     return response;
   } catch (error) {
